@@ -1,0 +1,23 @@
+table.Laboratoria {
+    display: table;
+    background-color: rgb(255, 208, 0);
+    width: -webkit-fill-available;
+    height: 200px;
+    margin-bottom: 8px;
+
+ }
+ table.es {
+    display: table;
+    background-color: rgb(53, 50, 50);
+    width: -webkit-fill-available;
+    height: 200px;
+    color: white;
+    margin-bottom: 8px;
+ }
+ table.TRANSFORMACION {
+    display: table;
+    background-color: rgb(255, 208, 0);
+    width: -webkit-fill-available;
+    height: 200px;
+    margin-bottom: 8px;
+ }
