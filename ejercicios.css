@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+ }
+ 
+ html {
+    box-sizing: border-box;
+ }
+ 
+ *,
+ *:before,
+ *:after {
+    box-sizing: inherit;
+ }
+ 
+ body {
+    background: white;
+ }
+ 
+ :root {
+    --ancho-lineas: 3px;
+ }
+ 
+ #escenario {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ #contenedor-responsive {
+    position: relative;
+    width: 75%;
+    transition: all 1s ease;
+ }
+ 
+ #contenedor-responsive::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+ }
+ 
+ .contenedor-campo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: green;
+    background-size: 8px 8px;
+    border: var(--ancho-lineas) solid white;
+    overflow: hidden;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: 0.25fr 0.75fr 2fr 0.75fr 0.25fr;
+    grid-template-columns: 0.09fr 1fr var(--ancho-lineas) 1fr 0.09fr;
+    grid-template-areas: "esi . lvmcar . esd " ". . lvmcar . . " "zc zc zc zc zc " ". . lvmcab . . " "eii . lvmcab . eid ";
+ }
+ 
+ 
+ /* La zona central */
+ #zona-central {
+    grid-area: zc;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(12, 1fr) var(--ancho-lineas) repeat(12, 1fr);
+ }
+ 
+ #area-grande-izquierda {
+    background-color: green;
+    background-size: 8px 8px;
+    border-top: var(--ancho-lineas) solid white;
+    border-right: var(--ancho-lineas) solid white;
+    border-bottom: var(--ancho-lineas) solid white;
+    z-index: 20;
+    grid-area: 1 / 1 / span 20 / span 4;
+ }
+ 
+ #circulo-central {
+    border: var(--ancho-lineas) solid white;
+    border-radius: 50%;
+    z-index: 50;
+    grid-area: 5 / 11 / span 12 / span 5;
+ }
+ 
+ #area-grande-derecha {
+    background-color: green;
+    background-size: 8px 8px;
+    border-top: var(--ancho-lineas) solid white;
+    border-left: var(--ancho-lineas) solid white;
+    border-bottom: var(--ancho-lineas) solid white;
+    z-index: 20;
+    grid-area: 1 / 22 / span 20 / span 4;
+ }
+ 
+ 
+ #penalty-derecha {
+    position: relative;
+    left: calc(var(--ancho-lineas) + 4px);
+    width: calc(var(--ancho-lineas));
+    height: calc(var(--ancho-lineas));
+    background: white;
+    border-radius: 50%;
+    z-index: 30;
+    grid-area: 11 / 23 / span 1 / span 1;
+ }
+ 
